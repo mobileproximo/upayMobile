@@ -1,0 +1,20 @@
+<ion-navbar >
+  <button color="proximo" class="energized" ion-button icon-only menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <h1 id="proxi-header-logo" (click)="vershome()"><img class="p-header-img"  align="left" src="assets/imgs/upay.png" alt="proximo"></h1>
+
+   <ion-buttons end="" style="margin-top: 5px !important;">
+     <div >
+<!--         <a  (click)="getPlafond()" style="font-weight: bold; font-size:90%" ><span> {{glb.HEADER.agence}} | {{glb.HEADER.montant}} FCFA</span></a>
+ -->        <a  (click)="getPlafond()" style="font-weight: bold; font-size:90%" ><span> Solde: {{glb.HEADER.montant}} FCFA</span></a>
+ <button (click)="getPlafond()" color="proximo" icon-only style="background: transparent !important">
+  <ion-icon color="proximo" name="ios-refresh-circle-outline"></ion-icon>
+</button>
+        <br>
+        <p style="font-size: 90%">Mise à jour le {{dateUpdate}}</p>
+
+     </div>
+   </ion-buttons>
+</ion-navbar>

@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-row class="imagewithlabelselect image_{{imagewithlabel}}">
+    <ion-item style="background: transparent;">
+      <ion-label class="primarylabel"></ion-label>
+      <ion-select style="max-width: 100%;padding: 0px !important;width: 100%;" (click)="prepareImageWithLabelSelector()" (ionChange)="setImageWithLabel(this.imagewithlabel)" [(ngModel)]="imagewithlabel">
+        <ion-option *ngFor="let optionimage of images" [value]="optionimage">+{{optionimage}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+</ion-list>

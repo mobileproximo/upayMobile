@@ -1,14 +1,87 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content >
+  <div  *ngIf="!Glb.ShowPin">
+    <div class="cardwallet">
+     <div style="display: flex">
+       <div class="cadran">
+         <img style="width:100%" src="assets/imgs/upay.png" alt="proximo">
+       </div>
+       <div class="welcome">
+         <span style="color: #e4e4e4">Bienvenu,</span>
+         <span style="color:#fff;font-weight: 600">{{Glb.HEADER.agence}}</span>
+       </div>
+     </div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+      <div class="balance">
+        <div style="flex:1;">
+
+          <div style="display: flex;flex-direction: column">
+            <span style="color:#9f9f9f;font-size: 10px;">XOF, PLAFOND</span>
+            <span style="color:#649CD4;font-weight: 600;font-size: 16px;">{{Glb.HEADER.montant}} FCFA</span>
+          </div>
+
+          <div style="margin-top: 20px;margin-bottom: 5px">
+            <span style="margin-right: 4px;color: #929292;font-size: 18px;">****</span>
+            <span style="margin-right: 4px;color: #929292;font-size: 18px;">****</span>
+            <span style="margin-right: 4px;color: #929292;font-size: 18px;">****</span>
+          </div>
+
+          <div style="display: flex;flex-direction: column;">
+            <span style="color:#9f9f9f;font-size: 10px;">MISE A JOUR SOLDE</span>
+            <span style="color:#000;font-size: 12px;">{{dateUpdate}}</span>
+          </div>
+
+        </div>
+        <div style="flex:1;display: flex;flex-direction: column">
+          <div style="display: flex;align-items: center;justify-content: flex-end;" (click)="getPlafond()">
+            <img style="width: 27%;max-width: 100px;" src="assets/imgs/reload.png" alt="proximo">
+          </div>
+          <div style="height: 100%;display: flex;align-items: flex-end;justify-content: flex-end;">
+            <img style="width:41%;max-width: 100px;" src="assets/imgs/logo_wizall.jpg" alt="proximo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="margin-top: 80px;margin-bottom: 40px;" class="p-container padding-bottom" >
+
+    <div  *ngIf="!Glb.ShowPin">
+
+        <a *ngFor="let page of pages; let i = index"  style="display: block;width: 100%;padding: 5px;border-bottom: 1px solid #ccc;">
+          <div style="display: flex;width: 100%;height: 55px;">
+            <div style="width: 60px;padding: 10px;display: flex;justify-content: center;align-items: center">
+              <img [src]="page.src" >
+            </div>
+            <div (click)="expandItem(page)" style="flex:1;padding: 10px;display: flex;align-items: center">
+              <h2 style="font-weight: 600;color:#649CD4;margin-bottom: 0px;font-size: 16px;" >{{page.title}}</h2>
+            </div>
+            <div style="width:60px;padding: 10px;display: flex;justify-content: center;align-items: center">
+              <button (click)="expandItem(page)" style="color: #2875DD;" ion-button clear item-end>
+                <ion-icon name="ios-arrow-dropdown"></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div>
+            <expandable [expandHeight]="itemExpandHeight" [expanded]="page.expanded">
+
+              <div class="paiement" >
+                <ion-slides slidesPerView="4.5">
+                  <ion-slide *ngFor="let p of page.souspages" (click)="verspage(p)">
+                     <img style="width:100%" [src]="p.icone" alt="proximo">
+                  </ion-slide>
+                </ion-slides>
+              </div>
+            </expandable>
+          </div>
+
+        </a>
+
+    </div>
+
+    <div proxi-scroll></div>
+  </div>
+
+  <custom-pin class="p-box padding" *ngIf="Glb.ShowPin"  pagetitle="Entrer votre code Pin" (change)="eventCapture($event)"></custom-pin>
+
 </ion-content>

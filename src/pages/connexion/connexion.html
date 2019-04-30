@@ -1,0 +1,57 @@
+
+<ion-content >
+  <div class="p-view-connexion list padding">
+    <div *ngIf="this.glb.ShowPin==false">
+        <img class="p-img p-img-connexion" style="margin-top: 20px !important ;width:70% !important;" src="assets/imgs/upay.png" alt="logo">
+
+        <div padding="" style="margin-top: 10px">
+          <form [formGroup]="Userdata">
+            <div style="background-color: transparent !important;">
+                <div style="display: flex;">
+                    <div style="width: 130px">
+                        <selectpays ></selectpays>
+                    </div>
+                    <div style="flex: 1" class="field">
+                        <input type="tel" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="login" id="login" formControlName="login"  placeholder="">
+                        <label for="login" style="width: 100% !important;">Téléphone</label>
+                    </div>
+                </div>
+
+                <div style="display: flex;flex-direction: column">
+                    <div style="flex: 1" class="field">
+                        <input type="text" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="nom" id="nom" formControlName="nom"   placeholder="">
+                        <label for="nom" style="width: 100% !important;">Votre nom</label>
+                    </div>
+                    <div style="flex: 1" class="field">
+                        <input type="text" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="prenom" id="prenom" formControlName="prenom"   placeholder="">
+                        <label for="prenom" style="width: 100% !important;">Votre prénom</label>
+                    </div>
+                    <div style="display: flex">
+                        <div style="width:48%;margin-right: 4%;" class="field">
+                            <input type="password" maxlength="4" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="codepin" id="codepin" formControlName="codepin" (change)="verifConfPin()" (input)="verifConfPin()"  placeholder="">
+                            <label for="codepin" style="width: 100% !important;">Votre Code Pin</label>
+                        </div>
+                        <div style="width:48%;" class="field">
+                            <input type="password" maxlength="4" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="confpin" id="confpin" formControlName="confpin" (change)="verifConfPin()" (input)="verifConfPin()" placeholder="">
+                            <label for="confpin" style="width: 100% !important;">Confirmer</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+              <button (click)="generateOTPCode()"  [disabled]="!Userdata.valid || !isconform" class="p-btn p-btn-jaune button button-small button-block" style="margin-top: 35px;margin-bottom: 20px;font-size: 14px;">Suivant</button>
+                <label style="text-align: center;display: block;" for="">En poursuivant vous recevrez sur votre téléphone un Sms contenant le code de vérification.  </label>
+            </div>
+          </form>
+    <!--       <p style="text-decoration: underline; text-align: center; margin-top: 20px; ">Mot de passe oublié ?</p> -->
+
+        </div>
+    </div>
+    <custom-pin class="p-box padding" *ngIf="glb.ShowPin" [toClear]="toclear" [inCommingData]="datapin" pagetitle="Entrer votre code Pin" (change)="eventCapture($event)"></custom-pin>
+
+  </div>
+  <scroll></scroll>
+</ion-content>

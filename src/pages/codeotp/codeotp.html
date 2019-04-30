@@ -1,0 +1,44 @@
+<!--
+  Generated template for the CodeotpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar >
+    <button color="proximo" class="energized" ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <h1 id="proxi-header-logo" ><img class="p-header-img"  align="left" src="assets/imgs/upay.png" alt="proximo"></h1>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <br>
+  <img class="p-img p-img-connexion" style="margin-top: 20px !important ;width:70% !important;"  src="assets/imgs/upay.png" alt="logo">
+
+  <div style="margin-top: 30px;display: flex;flex-direction: column">
+    <div style="flex: 1" >
+      <label style="font-size: 16px;text-align: center;display: block;font-weight: 600;" for="">Saisissez le code envoyé par Sms au  </label>
+      <label style="font-size: 16px;text-align: center;display: block;font-weight: 600" for="">{{userdata.login}}</label>
+    </div>
+    <div style="flex: 1;margin-top: 30px;" class="field">
+      <input type="tel" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="codeotp" id="codeotp" [(ngModel)]="codeotp"  placeholder="" maxlength="4">
+      <label for="codeotp" style="width: 100% !important;">Saisir le code</label>
+    </div>
+    <div style="flex: 1" class="field">
+      <div>
+        <button (click)="souscription()" [disabled]="!codeotp || codeotp==''" class="p-btn p-btn-jaune button button-small button-block" style="margin-top: 35px;margin-bottom: 20px;font-size: 14px;">Confirmer</button>
+      </div>
+    </div>
+    <div style="flex: 1" class="field">
+        <div>
+          <button (click)="generercode()"  class="p-btn p-btn-jaune button button-small button-block" style="margin-top: 35px;margin-bottom: 20px;font-size: 14px;">Recevoir un autre Code OTP</button>
+        </div>
+      </div>
+  </div>
+
+</ion-content>
