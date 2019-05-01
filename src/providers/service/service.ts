@@ -179,6 +179,15 @@ export class ServiceProvider {
       this.loading = null;
     }
   }
+  getCurrentDate(){
+    let date = new Date();
+    let jour = date.getDate();
+    let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
+    let annee = date.getFullYear();
+    let heure = date.getHours();
+    let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
+    return jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
+  }
   getplafond(){
     let parametre={'idPartn':this.glb.IDPART,'idTerm':this.glb.IDTERM,'session':this.glb.IDSESS}
     return this.posts('plafond/solde.php',parametre,{});

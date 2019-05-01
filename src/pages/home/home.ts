@@ -69,13 +69,7 @@ export class HomePage {
   }
 
   ionViewDidEnter(){
-    let date = new Date();
-    let jour = date.getDate();
-    let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
-    let annee = date.getFullYear();
-    let heure = date.getHours();
-    let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
-    this.dateUpdate = jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
+    this.dateUpdate = this.serv.getCurrentDate();
     this.Glb.ShowPin = false;
     this.codePin ="";
     setTimeout(() => {
@@ -118,13 +112,7 @@ export class HomePage {
       this.serv.dismissloadin();
       let plafond = JSON.parse(data.data);
       if(plafond.returnCode=='0'){
-        let date = new Date();
-        let jour = date.getDate();
-        let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
-        let annee = date.getFullYear();
-        let heure = date.getHours();
-        let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
-        this.dateUpdate = jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
+        this.dateUpdate = this.serv.getCurrentDate();
         this.Glb.HEADER.montant = this.number.transform(plafond.mntPlf);
         this.Glb.HEADER.numcompte = plafond.numcompte;
         this.Glb.HEADER.consomme = this.number.transform(plafond.consome)

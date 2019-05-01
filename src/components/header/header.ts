@@ -33,13 +33,8 @@ export class HeaderComponent {
   constructor(public number:MillierPipe, public serv:ServiceProvider, public glb:GlobalvariableProvider,public navCtrl:NavController) {
     console.log('Hello HeaderComponent Component');
     this.text = 'Hello World';
-    let date = new Date();
-    let jour = date.getDate();
-    let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
-    let annee = date.getFullYear();
-    let heure = date.getHours();
-    let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
-    this.dateUpdate = jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
+
+    this.dateUpdate = this.serv.getCurrentDate();
   }
   getPlafond(){
     this.serv.afficheloading();
@@ -47,13 +42,7 @@ export class HeaderComponent {
       this.serv.dismissloadin();
       let plafond = JSON.parse(data.data);
       if(plafond.returnCode=='0'){
-        let date = new Date();
-        let jour = date.getDate();
-        let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
-        let annee = date.getFullYear();
-        let heure = date.getHours();
-        let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
-        this.dateUpdate = jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
+        this.dateUpdate = this.serv.getCurrentDate();
         this.glb.HEADER.montant = this.number.transform(plafond.mntPlf);
         this.glb.HEADER.numcompte = plafond.numcompte;
         this.glb.HEADER.consomme = this.number.transform(plafond.consome)
