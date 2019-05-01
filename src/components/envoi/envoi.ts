@@ -188,6 +188,8 @@ showdetails:boolean=false;
 
   ngOnInit(): void {
     console.log(this.dataenvoi.oper)
+    if (this.dataenvoi.oper=='0052')
+    this.envoiForm.controls['idville'].setValue(1);
     if (this.dataenvoi.oper=='0007')
       this.envoiForm.controls['idville'].setValue(this.dataenvoi.idlieu);
     this.motifs=['Consommation courante',

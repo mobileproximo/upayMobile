@@ -6,14 +6,14 @@
         <input type="tel" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="fullname" formControlName="montant" id="montant" placeholder="Montant">
         <label for="montant" style="width: 100% !important;">Montant</label>
       </div>
-      <div *ngIf="dataenvoi.oper=='0052'">
+<!--       <div *ngIf="dataenvoi.oper=='0052'">
         <ion-item style="border-bottom: 2px solid #639dd5;border-radius: 5px;margin-bottom: 25px; " >
           <ion-label floating="" style="color:#444 !important;font-family: ubuntuMono !important;">Destination</ion-label>
           <ion-select formControlName="idville" interface="popover">
             <ion-option value="{{lieux.idville}}" *ngFor="let lieux of dataenvoi.lieux;">{{lieux.nomville}}</ion-option>
           </ion-select>
         </ion-item>
-      </div>
+      </div> -->
 
       <div class="field">
         <input type="tel" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="fullname" id="frais" readonly formControlName="mntTarif" placeholder="prenomBen">
@@ -86,7 +86,7 @@
         <input type="tel" style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="fullname" id="telb" formControlName="telBen" placeholder="Téléphone">
         <label for="telb" style="width: 100% !important;">Téléphone</label>
       </div>
-       
+
       <div class="p-button-group">
         <button (click)="validerEnvoi()" [disabled]="envoiForm.invalid" class="p-btn p-btn-vert button button-small right-buttons">
           envoyer
