@@ -205,13 +205,11 @@ export class ConnexionPage {
                   this.navCtrl.setRoot(HomePage)
               }
               else{
-                if(reponse.errorLabel=='Code Pin incorrect !')
+                if(reponse.errorLabel==='Code Pin incorrect !')
                  this.toclear = true;
-                //this.serv.dismissloadin();
                 this.serv.showError(reponse.errorLabel);
               }
             }).catch(error=>{
-              this.toclear = true;
               this.serv.dismissloadin();
               this.serv.showError("Impossible d'atteindre le serveur ");
 
