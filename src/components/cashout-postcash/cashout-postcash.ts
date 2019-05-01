@@ -143,6 +143,7 @@ ngOnInit(){
           this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
           this.glb.recu.agence = this.glb.HEADER.agence;
           this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
+          this.glb.dateUpdate = this.serv.getCurrentDate();
           this.glb.recu.service = parametre.operation;
           this.glb.recu.Oper = parametre.operateur;
         }

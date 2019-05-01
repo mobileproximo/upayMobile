@@ -114,6 +114,7 @@ export class HomePage {
       if(plafond.returnCode=='0'){
         this.dateUpdate = this.serv.getCurrentDate();
         this.Glb.HEADER.montant = this.number.transform(plafond.mntPlf);
+        this.Glb.dateUpdate = this.serv.getCurrentDate();
         this.Glb.HEADER.numcompte = plafond.numcompte;
         this.Glb.HEADER.consomme = this.number.transform(plafond.consome)
       } else this.serv.showError(plafond.errorLabel)

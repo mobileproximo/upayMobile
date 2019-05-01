@@ -26,6 +26,7 @@ export class GlobalvariableProvider {
  public recu                 : any;
  public notfound               = false;
  public message                = "";
+ public dateUpdate               = "";
  public minenlevement    : any = 200000;
  public listeImprimantes : any;
  public statusImpriamte        = false;

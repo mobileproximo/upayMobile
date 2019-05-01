@@ -42,6 +42,7 @@ export class RechargeProvider {
           this.glb.recu.agence = this.glb.HEADER.agence;
           this.glb.showRecu=true;
           this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
+          this.glb.dateUpdate = this.serv.getCurrentDate();
           this.glb.recu.service = datarecharge.operation;
           this.glb.recu.Oper = datarecharge.operateur;
 
@@ -81,6 +82,7 @@ export class RechargeProvider {
           this.glb.recu.agence = this.glb.HEADER.agence;
           this.glb.showRecu=true;
           this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
+          this.glb.dateUpdate = this.serv.getCurrentDate();
           this.glb.recu.service = datarecharge.operation;
           this.glb.recu.Oper = datarecharge.operateur;
 

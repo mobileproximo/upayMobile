@@ -115,6 +115,7 @@ showdetails:boolean=false;
         if(reponse.returnCode=='0'){
           this.glb.recu = reponse;
           this.glb.HEADER.montant = this.number.transform(reponse.mntPlfap);
+          this.glb.dateUpdate = this.envServ.getCurrentDate();
           this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
           this.glb.recu.agence = this.glb.HEADER.agence;
           this.glb.recu.dtTrx = this.formdate.transform(this.glb.recu.dtTrx);

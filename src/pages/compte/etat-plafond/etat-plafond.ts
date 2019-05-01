@@ -34,6 +34,7 @@ export class EtatPlafondPage {
       let plafond = JSON.parse(data.data);
       if(plafond.returnCode=='0'){
         this.glb.HEADER.montant = this.number.transform(plafond.mntPlf);
+        this.glb.dateUpdate = this.serv.getCurrentDate();
         this.glb.HEADER.numcompte = plafond.numcompte;
         this.glb.HEADER.consomme = this.number.transform(plafond.consome)
       } else this.serv.showError(plafond.errorLabel)

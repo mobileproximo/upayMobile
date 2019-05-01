@@ -159,6 +159,7 @@ export class EncWoyofalPage {
         this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
         this.glb.recu.agence = this.glb.HEADER.agence;
         this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
+        this.glb.dateUpdate = this.serv.getCurrentDate();
         this.glb.recu.dtTrx = this.dateformat.transform(reponse.dtTrx);
         this.glb.recu.numTrx = reponse.numTrx;
         this.glb.recu.Token2 = typeof (reponse.Token3)!='object'?this.formatagechaine.transform(reponse.Token2, 5, '-'):'';

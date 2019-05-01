@@ -135,6 +135,7 @@ dataForPin:any={};
           this.glb.recu.service = 'Cash-Out';
           this.glb.recu.telRech = parametres.recharge.telephone;
           this.glb.HEADER.montant = reponse.mntPlfap;
+          this.glb.dateUpdate = this.serv.getCurrentDate();
           this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
           this.glb.recu.agence = this.glb.HEADER.agence;
           this.reset();

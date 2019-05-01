@@ -219,6 +219,7 @@ export class ConnexionPage {
                   if(typeof(reponse.mntPlf)!='object')
                   this.glb.HEADER.montant = this.number.transform(reponse.mntPlf);
                   else this.glb.HEADER.montant = 0;
+                  this.glb.dateUpdate = this.serv.getCurrentDate();
                   this.glb.HEADER.numcompte = reponse.numcompte;
                   this.glb.HEADER.consomme = this.number.transform(reponse.consome)
                   this.navCtrl.setRoot(HomePage)

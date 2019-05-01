@@ -42,8 +42,9 @@ export class HeaderComponent {
       this.serv.dismissloadin();
       let plafond = JSON.parse(data.data);
       if(plafond.returnCode=='0'){
-        this.dateUpdate = this.serv.getCurrentDate();
+        this.glb.dateUpdate = this.serv.getCurrentDate();
         this.glb.HEADER.montant = this.number.transform(plafond.mntPlf);
+
         this.glb.HEADER.numcompte = plafond.numcompte;
         this.glb.HEADER.consomme = this.number.transform(plafond.consome)
       } else this.serv.showError(plafond.errorLabel)
