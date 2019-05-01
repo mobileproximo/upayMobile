@@ -181,10 +181,10 @@ export class ServiceProvider {
   }
   getCurrentDate(){
     let date = new Date();
-    let jour = date.getDate();
+    let jour = date.getDate()>= 10?date.getDate():"0"+date.getDate();
     let mois = date.getMonth()+1 >= 10? date.getMonth()+1:"0"+(date.getMonth()+1);
     let annee = date.getFullYear();
-    let heure = date.getHours();
+    let heure = date.getHours()>= 10?date.getHours():"0"+date.getHours();
     let minute = date.getMinutes() >= 10 ? date.getMinutes(): "0"+date.getMinutes();
     return jour+"/"+mois+"/"+annee+" à "+heure+"h:"+minute;
   }
