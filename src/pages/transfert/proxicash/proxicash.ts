@@ -19,7 +19,7 @@ export class ProxicashPage {
 private service;
   private datareception:any={};
   private dataenvoi:any={};
-  private afficheenv:boolean=false;
+  private afficheenv:boolean=true;
   constructor(public serv:ServiceProvider,public glb:GlobalvariableProvider,public navCtrl: NavController, public navParams: NavParams) {
     glb.ShowPin = false;
   }
@@ -33,6 +33,8 @@ private service;
     this.datareception.operateur = this.dataenvoi.operateur='ProxiCash';
     this.glb.HEADERTITELE.src = this.glb.IMAGE_BASE_URL+"Petite-Icon-03.png";
     this.glb.HEADERTITELE.title = "Transfert d'argent";
+    this.afficheenv =true;
+
    // this.relevelieux();
 
     console.log('ionViewDidLoad ProxicashPage');
