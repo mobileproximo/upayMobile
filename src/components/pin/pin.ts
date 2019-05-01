@@ -33,7 +33,7 @@ export class PinComponent implements OnChanges{
 
   constructor(private serv:ServiceProvider,private glb:GlobalvariableProvider,public number:MillierPipe) {
     let shuffleNumbers = this.shuffle(this.numbersTabs);
-    this.inCommingData.image = glb.BASEURL+"upay.png"
+    this.inCommingData.image = glb.IMAGE_BASE_URL+"upay.png"
     let j=0;
     for(let i=0;i<3;i++){
       this.taba[j++]= shuffleNumbers[i];
