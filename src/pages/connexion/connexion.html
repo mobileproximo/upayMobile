@@ -40,6 +40,7 @@
                 </div>
 
             </div>
+            <p style="color: #d50000;" *ngIf="!isconform">{{message}}</p>
 
             <div>
               <button (click)="generateOTPCode()"  [disabled]="!Userdata.valid || !isconform" class="p-btn p-btn-jaune button button-small button-block" style="margin-top: 35px;margin-bottom: 20px;font-size: 14px;">Suivant</button>

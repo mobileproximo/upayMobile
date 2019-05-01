@@ -38,6 +38,7 @@ export class ConnexionPage {
   datapin:any={};
   toclear :boolean= false;
   private isconform:boolean=false;
+  private message:any="";
 
   constructor(public androidPermissions: AndroidPermissions,public platform:Platform,private storage: Storage,private oneSignal:OneSignal,private menu: MenuController,public number:MillierPipe,public lower:LowerCasePipe,private sim: Sim,public glb:GlobalvariableProvider,public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,public formBuilder:FormBuilder,public serv:ServiceProvider) {
     this.Userdata = this.formBuilder.group({
@@ -82,7 +83,25 @@ export class ConnexionPage {
     this.menu.swipeEnable(false);
   }
   verifConfPin(){
-    this.isconform = this.Userdata.controls['codepin'].value==this.Userdata.controls['confpin'].value;
+    if(isNaN(this.Userdata.controls['codepin'].value)){
+      this.isconform = false;
+      this.message="Le code pin doit etre uniquement des chiffres"
+    }
+
+    else{
+      if(this.serv.CheckIfSequence(this.Userdata.controls['codepin'].value)){
+        this.isconform = false;
+        this.message="Le code ne doit pas être consecutif ni composé d'un même chiffre";
+      }
+      else{
+        this.isconform = this.Userdata.controls['codepin'].value == this.Userdata.controls['confpin'].value;
+        if(!this.isconform)
+        this.message="Les codes pin saisi ne sont pas conformes";
+
+
+      }
+    }
+   // this.isconform = this.Userdata.controls['codepin'].value==this.Userdata.controls['confpin'].value;
   }
 
   ionViewWillLeave() {

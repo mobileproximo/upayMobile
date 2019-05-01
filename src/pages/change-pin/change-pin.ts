@@ -79,6 +79,20 @@ export class ChangePinPage {
 
   }
   verifconformite(){
-    this.conf = this.Userdata.controls['newpin'].value == this.Userdata.controls['conf'].value
+    if(isNaN(this.Userdata.controls['newpin'].value)){
+      this.conf = false;
+      this.message="Le code pin doit etre uniquement des chiffres"
+    }
+
+    else{
+      if(this.serv.CheckIfSequence(this.Userdata.controls['newpin'].value)){
+        this.conf = false;
+        this.message="Le code ne doit pas être consecutif ni composé d'un même chiffre";
+      }
+      else{
+        this.conf = this.Userdata.controls['newpin'].value == this.Userdata.controls['conf'].value
+
+      }
+    }
   }
 }

@@ -136,6 +136,17 @@ export class ServiceProvider {
       })
     });
   }
+  CheckIfSequence(valeur:any){
+    let tabNombres = valeur.split('')
+    let conditionA:boolean =(tabNombres[0]==tabNombres[1] && tabNombres[1]==tabNombres[2] && tabNombres[2]==tabNombres[3]);
+    let conditionB:boolean =(tabNombres[0]+1==tabNombres[1] && tabNombres[1]+1==tabNombres[2] && tabNombres[2]+1==tabNombres[3]);
+
+    if(conditionA || conditionB)
+    return true;
+    return false;
+
+
+  }
 
   showAlert(message :string){
     let alert = this.alertCtrl.create({
