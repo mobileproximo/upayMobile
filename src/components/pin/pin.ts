@@ -18,7 +18,7 @@ export class PinComponent implements OnChanges{
   }
   @Input() pagetitle: String = "Enter Pin";
   @Input() toClear: boolean = false;
-  @Input() inCommingData: any={"operation":"","image":"","montant":"RAS","telephone":"RAS"};
+  @Input() inCommingData: any={"operation":"","image":"assets/imgs/upay.png","montant":"RAS","telephone":"RAS"};
 
 
 
