@@ -58,7 +58,7 @@ export class ChangePinPage {
   changeMotDePasse(){
     let parametre:any={};
     parametre.datapin = this.Userdata.getRawValue();
-    parametre.datapin.pwd = parametre.ancienpin;
+    parametre.datapin.pwd = parametre.datapin.ancienpin;
     parametre.session =this.glb.IDSESS;
     parametre.idTerm = this.glb.IDTERM;
     parametre.idPartn = this.glb.IDPART;
