@@ -81,7 +81,7 @@ export class ChangePinPage {
   verifconformite(){
     if(isNaN(this.Userdata.controls['newpin'].value)){
       this.conf = false;
-      this.message="Le code pin doit etre uniquement des chiffres"
+      this.message="Le code pin doit etre composé uniquement des chiffres"
     }
 
     else{

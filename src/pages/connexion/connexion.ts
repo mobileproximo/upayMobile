@@ -85,7 +85,7 @@ export class ConnexionPage {
   verifConfPin(){
     if(isNaN(this.Userdata.controls['codepin'].value)){
       this.isconform = false;
-      this.message="Le code pin doit etre uniquement des chiffres"
+      this.message="Le code pin doit etre composé  uniquement des chiffres"
     }
 
     else{
