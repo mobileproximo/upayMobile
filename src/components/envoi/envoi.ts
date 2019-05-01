@@ -56,6 +56,7 @@ showdetails:boolean=false;
   }
   reinitialiser(){
     this.envoiForm.reset();
+    this.showdetails=false;
 
   }
   getIndicatif(pays){
