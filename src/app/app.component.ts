@@ -42,13 +42,13 @@ export class MyApp {
       { title: 'Deconnexion', component: ConnexionPage,src:this.Glb.IMAGE_BASE_URL+'fermer.png' }
 
     ];
-    
+
     this.headerColor.tint("#639dd5");
     Glb.ShowPin = true;
     platform.ready().then(() => {
       //statusBar.styleDefault();
       // let status bar overlay webview
-    statusBar.overlaysWebView(true);
+    //statusBar.overlaysWebView(true);
 
 // set status bar to white
     statusBar.backgroundColorByHexString('#639dd5');
