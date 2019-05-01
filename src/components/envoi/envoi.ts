@@ -23,6 +23,7 @@ export class EnvoiComponent  implements OnInit{
 private envoiForm :FormGroup;
 private motifs;
 dataForPin:any={};
+showdetails:boolean=false;
 
   constructor(public formdate:FormatdatePipe,public formatcode:FormatCodeTransfertPipe,public number:MillierPipe,public envServ:ServiceProvider,public formBuilder :FormBuilder,public glb:GlobalvariableProvider) {
     this.envoiForm = formBuilder.group({
@@ -64,6 +65,7 @@ dataForPin:any={};
 
   }
   calculerFrais(){
+    this.showdetails = false;
     this.envoiForm.controls['mntTarif'].setValue('');
     this.envoiForm.controls['montantTTC'].setValue('');
     let parametre : any={};
@@ -77,6 +79,7 @@ dataForPin:any={};
       this.envServ.dismissloadin();
       let reponse :any = JSON.parse(data.data);
       if(reponse.returnCode=='0'){
+        this.showdetails = true;
         this.envoiForm.controls['montant'].setValue(this.number.transform(parametre.montant));
         this.envoiForm.controls['mntTarif'].setValue(this.number.transform(reponse.mntTarif));
         let mttc :any = reponse.mntTarif*1 + parametre.montant*1;
