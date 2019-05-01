@@ -39,7 +39,7 @@ showdetails:boolean=false;
       prenomBen:['',Validators.required],
       nomBen:['',Validators.required],
       telBen:['',Validators.required],
-      indicatif:['',Validators.required],
+      indicatif:[''],
       idville:['',Validators.required]
     })
     this.glb.modeTransactionnel = false;
