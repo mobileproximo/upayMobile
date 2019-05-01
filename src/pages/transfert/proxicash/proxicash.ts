@@ -33,7 +33,7 @@ private service;
     this.datareception.operateur = this.dataenvoi.operateur='ProxiCash';
     this.glb.HEADERTITELE.src = this.glb.IMAGE_BASE_URL+"Petite-Icon-03.png";
     this.glb.HEADERTITELE.title = "Transfert d'argent";
-    this.relevelieux();
+   // this.relevelieux();
 
     console.log('ionViewDidLoad ProxicashPage');
   }
