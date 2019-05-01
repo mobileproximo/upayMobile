@@ -90,7 +90,9 @@ export class ChangePinPage {
         this.message="Le code ne doit pas être consecutif ni composé d'un même chiffre";
       }
       else{
-        this.conf = this.Userdata.controls['newpin'].value == this.Userdata.controls['conf'].value
+        this.conf = this.Userdata.controls['newpin'].value == this.Userdata.controls['conf'].value;
+        if(!this.conf)
+        this.message="Les codes pin saisi ne sont pas conformes";
 
       }
     }
