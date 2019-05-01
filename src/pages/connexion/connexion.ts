@@ -54,7 +54,7 @@ export class ConnexionPage {
 
 
     });
-    this.datapin.image='assets/imgs/upay.png';
+    this.datapin.image=this.glb.BASEURL+'upay.png';
     this.datapin.operation='Connexion';
     glb.PIN="";
 

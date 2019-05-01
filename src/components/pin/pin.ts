@@ -33,6 +33,7 @@ export class PinComponent implements OnChanges{
 
   constructor(private serv:ServiceProvider,private glb:GlobalvariableProvider,public number:MillierPipe) {
     let shuffleNumbers = this.shuffle(this.numbersTabs);
+    this.inCommingData.image = glb.BASEURL+"upay.png"
     let j=0;
     for(let i=0;i<3;i++){
       this.taba[j++]= shuffleNumbers[i];
@@ -48,7 +49,7 @@ export class PinComponent implements OnChanges{
 
     this.lastnumer = shuffleNumbers[9];
     if(this.inCommingData){
-      
+
       if(this.inCommingData.telephone){
         if(this.inCommingData.oper=='0057' && this.inCommingData.sousop=='0002')
         this.inCommingData.label ="Numéro Badge";
