@@ -1,4 +1,4 @@
-<img *ngIf="inCommingData.operation=='Connexion' || glb.modeTransactionnel==false" class="p-img p-img-connexion" style="margin-top: 10px !important ;width:70% !important;" [src]="inCommingData.image" alt="logo">
+<img *ngIf="inCommingData.operation=='Connexion' || glb.modeTransactionnel==false" class="p-img p-img-connexion" style="margin-top: 10px !important ;width:70% !important;" src="assets/imgs/upay.png" alt="logo">
 <h4 style="color: #639dd5" *ngIf="inCommingData.operation=='Connexion'" style="font-weight: bold;" text-center margin-vertical>{{ inCommingData.operation }}</h4>
 
 <ion-card padding="" style="border-radius: 10px; margin:auto !important" *ngIf="inCommingData && inCommingData.montant && inCommingData.montant!='RAS'">
