@@ -192,6 +192,8 @@ showdetails:boolean=false;
     console.log(this.dataenvoi.oper)
     if (this.dataenvoi.oper=='0052')
     this.envoiForm.controls['idville'].setValue(1);
+    this.envoiForm.controls['prenomExp'].setValue(this.glb.PRENOM);
+    this.envoiForm.controls['nomExp'].setValue(this.glb.NOM);
     if (this.dataenvoi.oper=='0007')
       this.envoiForm.controls['idville'].setValue(this.dataenvoi.idlieu);
     this.motifs=['Consommation courante',

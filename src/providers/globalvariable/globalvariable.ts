@@ -38,7 +38,8 @@ export class GlobalvariableProvider {
  public DATEPAUSE;
  public DATEREPRISE;
  public READCODEOTP:string="";
-
+ public PRENOM:string="";
+ public NOM:string="";
 
   constructor(public http: HttpClient) {
     console.log('Hello GrobalvariableProvider Provider');
