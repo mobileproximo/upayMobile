@@ -31,6 +31,7 @@ export class RechargeProvider {
     }
     if(parametres.recharge.oper=="0073")
     parametres.recharge.telephone="221"+parametres.recharge.telephone;
+    alert(JSON.stringify(parametres));
     this.serv.posts('recharge/'+file+'.php',parametres,{}).then(data=>{
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
