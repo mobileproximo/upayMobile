@@ -77,7 +77,6 @@ export class PinComponent implements OnChanges{
     }
 
 }
-
   emitEvent() {
     this.change.emit(this.pin);
   }

@@ -5,26 +5,14 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ServiceProvider} from "../../providers/service/service";
 import {GlobalvariableProvider} from "../../providers/globalvariable/globalvariable";
 import {Sim} from "@ionic-native/sim";
-import {LowerCasePipe} from "@angular/common";
+import {LowerCasePipe, JsonPipe} from "@angular/common";
 import {MillierPipe} from "../../pipes/millier/millier";
-import {SplashScreen} from "@ionic-native/splash-screen";
 import {OneSignal} from "@ionic-native/onesignal";
 import {CodeotpPage} from "../codeotp/codeotp";
 import { Storage } from '@ionic/storage';
 
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 
-
-//import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-
-//import{Pro} from "@ionic/pro";
-
-/**
- * Generated class for the ConnexionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -57,7 +45,6 @@ export class ConnexionPage {
     this.datapin.image=this.glb.IMAGE_BASE_URL+'upay.png';
     this.datapin.operation='Connexion';
     glb.PIN="";
-        storage.set('login','221775067661');
        storage.get('login').then((val) => {
         if(val===null){
           glb.ShowPin = false;
@@ -203,8 +190,10 @@ export class ConnexionPage {
               numsim1:this.Userdata.controls['idSim1'].value,
               numsim2:this.Userdata.controls['idSim2'].value,
             });
+            let params= this.Userdata.getRawValue();
+            //alert(JSON.stringify(params));
             this.serv.afficheloading();
-            this.serv.posts('connexion/connexion.php',this.Userdata.getRawValue(),{}).then(data=>{
+            this.serv.posts('connexion/connexion.php',params,{}).then(data=>{
               this.serv.dismissloadin();
               let reponse = JSON.parse(data.data);
               console.log(JSON.stringify(reponse))

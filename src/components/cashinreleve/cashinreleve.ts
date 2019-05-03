@@ -6,13 +6,6 @@ import {ServiceProvider} from "../../providers/service/service";
 import {MillierPipe} from "../../pipes/millier/millier";
 import { Storage } from '@ionic/storage';
 
-
-/**
- * Generated class for the CashinreleveComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'cashinreleve',
   templateUrl: 'cashinreleve.html'
