@@ -13,7 +13,10 @@
       <div *ngIf="glb.recu.service && glb.recu.service=='rapido'">
         <p class="p-recu-lib">N° Badge</p><p>:  {{glb.recu.telRech}}</p><br>
       </div>
-      <p *ngIf="!glb.recu.service || glb.recu.service!='rapido' || glb.recu.service!='Cashout UPay'" class="p-recu-lib">Telephone</p><p>: {{glb.recu.telRech}} </p><br>
+      <div >
+
+      </div>
+      <p *ngIf="!glb.recu.service || glb.recu.service!='rapido'" class="p-recu-lib"><span *ngIf="glb.recu.service!='Cashout UPay'">Telephone</span></p><p>:<span *ngIf="glb.recu.service!='Cashout UPay'"> {{glb.recu.telRech}}</span> </p><br>
       <p *ngIf="glb.recu.service=='Cashout UPay'" class="p-recu-lib">Code de Transfert</p><p>: {{glb.recu.telRech}} </p><br>
       <div *ngIf="glb.recu.Oper=='Revendeur Seedo' ||glb.recu.Oper=='Revendeur Yakalma'"> <p class="p-recu-lib">Taux</p><p>: {{glb.recu.taux}} </p><br></div>
       <hr>
