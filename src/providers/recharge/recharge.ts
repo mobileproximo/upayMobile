@@ -40,6 +40,8 @@ export class RechargeProvider {
           this.glb.recu.telRech = datarecharge.recharge.telephone;
           this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
           this.glb.recu.agence = this.glb.HEADER.agence;
+          if(parametres.recharge.oper=="0074")
+          this.glb.recu.telRech = datarecharge.codeTransfert;
           this.glb.showRecu=true;
           this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
           this.glb.dateUpdate = this.serv.getCurrentDate();

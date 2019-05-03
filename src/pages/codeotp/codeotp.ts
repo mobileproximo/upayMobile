@@ -7,13 +7,6 @@ import { ConnexionPage } from '../connexion/connexion';
 declare var SMS:any;
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 
-/**
- * Generated class for the CodeotpPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-codeotp',
@@ -158,7 +151,7 @@ export class CodeotpPage  {
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=="0"){
-        
+
       }
       else this.serv.showError(reponse.errorLabel);
 

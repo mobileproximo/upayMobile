@@ -57,7 +57,7 @@ export class ConnexionPage {
     this.datapin.image=this.glb.IMAGE_BASE_URL+'upay.png';
     this.datapin.operation='Connexion';
     glb.PIN="";
-
+        storage.set('login','221775067661');
        storage.get('login').then((val) => {
         if(val===null){
           glb.ShowPin = false;
