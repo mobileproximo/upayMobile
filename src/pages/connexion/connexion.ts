@@ -56,7 +56,7 @@ export class ConnexionPage {
         }
 
       });
-      this.getPermission();
+     // this.getPermission();
 
   }
 
@@ -98,7 +98,7 @@ export class ConnexionPage {
 
     // If you have more than one side menu, use the id like below
     // this.menu.swipeEnable(true, 'menu1');
-  }
+  }/*
   getPermission(){
     this.platform.ready().then((readySource) => {
           this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_SMS).then(
@@ -131,7 +131,7 @@ export class ConnexionPage {
     })
 
 
-  }
+  } */
 
   chercherimprimante(){
     if(this.glb.statusImpriamte==true){
