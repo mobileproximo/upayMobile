@@ -8,6 +8,7 @@ import { GlobalvariableProvider } from '../../../providers/globalvariable/global
   templateUrl: 'code-transfert.html',
 })
 export class CodeTransfertPage {
+  private mesCodes:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private serv:ServiceProvider,private glb:GlobalvariableProvider) {
   }
@@ -17,6 +18,18 @@ export class CodeTransfertPage {
     this.glb.HEADERTITELE.src = this.glb.IMAGE_BASE_URL+"Petite-Icon-06.png";
     this.glb.HEADERTITELE.title = "Mes Codes de Retrait";
     console.log('ionViewDidLoad CodeTransfertPage');
-  }
+    this.serv.afficheloading();
+    this.serv.posts('recharge/',{telephone:this.glb.PHONE}).then(data=>{
+      this.serv.dismissloadin();
+      let reponse = JSON.parse(data.data);
+      if(reponse.returnCode=='0'){
+        this.mesCodes = reponse.listCodeUpay;
+      }
+      else this.serv.showError(reponse.errorLabel)
+  }).catch(err=>{
+      this.serv.dismissloadin();
+      this.serv.showError("Impossible d'atteindre le serveur");
 
+    })
+  }
 }
