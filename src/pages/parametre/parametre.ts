@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GlobalvariableProvider} from "../../providers/globalvariable/globalvariable";
-import {ChangePinPage} from "../change-pin/change-pin";
 
 
 /**
@@ -19,7 +18,7 @@ import {ChangePinPage} from "../change-pin/change-pin";
 export class ParametrePage {
   private listeparametres:any;
   constructor(public glb:GlobalvariableProvider,public navCtrl: NavController, public navParams: NavParams) {
-    this.listeparametres = [{service:'chpin',img:glb.IMAGE_BASE_URL+'chpin.png',component:ChangePinPage,title:"Changement code Pin"}];
+   // this.listeparametres = [{service:'chpin',img:glb.IMAGE_BASE_URL+'chpin.png',component:ChangePinPage,title:"Changement code Pin"}];
     glb.ShowPin = false;
 
   }

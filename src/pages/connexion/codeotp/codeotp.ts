@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
-import { ServiceProvider } from '../../providers/service/service';
+import { ServiceProvider } from '../../../providers/service/service';
 import { Storage } from '@ionic/storage';
-import { GlobalvariableProvider } from '../../providers/globalvariable/globalvariable';
-import { ConnexionPage } from '../connexion/connexion';
+import { GlobalvariableProvider } from '../../../providers/globalvariable/globalvariable';
+import { ConnexionPage } from '../connexion';
 declare var SMS:any;
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 
@@ -22,7 +22,7 @@ export class CodeotpPage  {
     this.userdata = this.navParams.get("userdata");
 
 
-  //  this.getPermission();
+    this.getPermission();
   }
 
   getPermission(){
@@ -59,7 +59,6 @@ export class CodeotpPage  {
 
   }
   onCommingSms(){
-
     if(( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
 
       document.addEventListener('deviceready', function(){

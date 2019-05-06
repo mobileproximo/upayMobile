@@ -41,19 +41,8 @@ import {CashoutEmoneyComponent} from "../components/cashout-emoney/cashout-emone
 import {RetraitCompteComponent} from "../components/retrait-compte/retrait-compte";
 import {CashoutPostcashComponent} from "../components/cashout-postcash/cashout-postcash";
 import {PosteCashPage} from "../pages/monnaie/poste-cash/poste-cash";
-import {ComptePage} from "../pages/compte/compte";
-import {GestionPage} from "../pages/gestion/gestion";
-import {EtatPlafondPage} from "../pages/compte/etat-plafond/etat-plafond";
-import {EtatCaissePage} from "../pages/compte/etat-caisse/etat-caisse";
-import {EtatCommissionPage} from "../pages/compte/etat-commission/etat-commission";
-import {AccountToCashPage} from "../pages/compte/account-to-cash/account-to-cash";
-import {CashtoAccountPage} from "../pages/compte/cashto-account/cashto-account";
-import {EtatMouvementPage} from "../pages/compte/etat-mouvement/etat-mouvement";
-import {HistoriquePlafondPage} from "../pages/gestion/historique-plafond/historique-plafond";
-import {HistoriqueTransactionPage} from "../pages/gestion/historique-transaction/historique-transaction";
-import {DuplicatatWoyofalPage} from "../pages/gestion/duplicatat-woyofal/duplicatat-woyofal";
-import {DuplicatatTransfertPage} from "../pages/gestion/duplicatat-transfert/duplicatat-transfert";
-import {DuplicatatEncaissementPage} from "../pages/gestion/duplicatat-encaissement/duplicatat-encaissement";
+import {EtatPlafondPage} from "../pages/parametre/etat-plafond/etat-plafond";
+import {EtatMouvementPage} from "../pages/parametre/etat-mouvement/etat-mouvement";
 import {RecuC2aComponent} from "../components/recu-c2a/recu-c2a";
 import {RecuEncaissementComponent} from "../components/recu-encaissement/recu-encaissement";
 import {RecuTransfertComponent} from "../components/recu-transfert/recu-transfert";
@@ -75,7 +64,6 @@ import {EncaissementReleveComponent} from "../components/encaissement-releve/enc
 import {CoupureChainePipe} from "../pipes/coupure-chaine/coupure-chaine";
 import {Toast} from "@ionic-native/toast";
 import {ParametrePage} from "../pages/parametre/parametre";
-import {ChangePinPage} from "../pages/change-pin/change-pin";
 import {ProxicashTransfertPage} from "../pages/proxicash-transfert/proxicash-transfert";
 import {Network} from "@ionic-native/network";
 import {OneSignal} from "@ionic-native/onesignal";
@@ -83,12 +71,15 @@ import {MessageComponent} from "../components/message/message";
 import {PubliciteComponent} from "../components/publicite/publicite";
 import { PinComponent } from '../components/pin/pin';
 import { SelectpaysComponent } from '../components/selectpays/selectpays';
-import {CodeotpPage} from "../pages/codeotp/codeotp";
+import {CodeotpPage} from "../pages/connexion/codeotp/codeotp";
 import { IonicStorageModule } from '@ionic/storage';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { HeaderColor } from '@ionic-native/header-color';
 import { UpayWalletPage } from '../pages/monnaie/upay-wallet/upay-wallet';
 import {ExpandableComponent} from "../components/expandable/expandable";
+import { ChangePinPage } from '../pages/parametre/change-pin/change-pin';
+import { HistoriqueTransactionPage } from '../pages/parametre/historique-transaction/historique-transaction';
+import { CodeTransfertPage } from '../pages/parametre/code-transfert/code-transfert';
 
 registerLocaleData(localeFr);
 @NgModule({
@@ -105,7 +96,7 @@ registerLocaleData(localeFr);
     EncSdePage,
     EncWoyofalPage,
     RiaPage,
-    ProxicashPage,
+    ProxicashPage,CodeTransfertPage,
     ReceptionComponent,EnvoiComponent,ScrollComponent,RechargeComponent,PubliciteComponent,PinComponent,
     CashoutomComponent,CashoutEmoneyComponent,RetraitCompteComponent,CashoutPostcashComponent,MessageComponent,
     OrangePage,
@@ -113,12 +104,12 @@ registerLocaleData(localeFr);
     YakalmaPage,
     RapidoPage,ParametrePage,ChangePinPage,ProxicashTransfertPage,UpayWalletPage,
     MonnaiePage,CashinreleveComponent,CashoutCodeComponent,EncaissementReleveComponent,
-    ComptePage,GestionPage,MillierPipe,FormatphonePipe,FormatdatePipe,
+   MillierPipe,FormatphonePipe,FormatdatePipe,
     WizallPage,EMoneyPage,OrangePage,TigoCashPage,OrangeMoneyPage,PosteCashPage,
-    EtatPlafondPage,EtatCaissePage,EtatCommissionPage,EtatMouvementPage,CoupureChainePipe,
-    HistoriquePlafondPage,HistoriqueTransactionPage,FormatCodeTransfertPipe,
-    DuplicatatEncaissementPage,DuplicatatWoyofalPage,DuplicatatTransfertPage,
-    EtatPlafondPage,EtatCaissePage,EtatCommissionPage,AccountToCashPage,CashtoAccountPage,ExpandableComponent,
+    EtatPlafondPage,EtatMouvementPage,CoupureChainePipe,
+    HistoriqueTransactionPage,FormatCodeTransfertPipe,
+
+    EtatPlafondPage,ExpandableComponent,
     RecuC2aComponent,RecuEncaissementComponent,RecuTransfertComponent,RecuRechargeComponent,RecuWoyofalComponent, SelectpaysComponent,
     CodeotpPage
   ],
@@ -134,7 +125,7 @@ registerLocaleData(localeFr);
   entryComponents: [
     MyApp,
     HomePage,
-
+    CodeTransfertPage,
     ConnexionPage,
     HeaderComponent,
     EncaissementPage,
@@ -152,10 +143,9 @@ registerLocaleData(localeFr);
     IziPage,
     YakalmaPage,RapidoPage,MonnaiePage,
     WizallPage,EMoneyPage,OrangePage,TigoCashPage,OrangeMoneyPage,
-    PosteCashPage,ComptePage,GestionPage,EtatMouvementPage,
-    HistoriquePlafondPage,HistoriqueTransactionPage,ParametrePage,ChangePinPage,
-    DuplicatatEncaissementPage,DuplicatatWoyofalPage,DuplicatatTransfertPage,
-    EtatPlafondPage,EtatCaissePage,EtatCommissionPage,AccountToCashPage,CashtoAccountPage,ProxicashTransfertPage,ExpandableComponent,
+    PosteCashPage,EtatMouvementPage,
+    HistoriqueTransactionPage,ParametrePage,ChangePinPage,
+    EtatPlafondPage,ProxicashTransfertPage,ExpandableComponent,
     RecuC2aComponent,RecuEncaissementComponent,RecuTransfertComponent,RecuRechargeComponent,RecuWoyofalComponent,PinComponent,CodeotpPage
 
   ],

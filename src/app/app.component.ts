@@ -7,8 +7,6 @@ import {ConnexionPage} from "../pages/connexion/connexion";
 import {EncaissementPage} from "../pages/encaissement/encaissement";
 import {TransfertPage} from "../pages/transfert/transfert";
 import {MonnaiePage} from "../pages/monnaie/monnaie";
-import {ComptePage} from "../pages/compte/compte";
-import {GestionPage} from "../pages/gestion/gestion";
 import {GlobalvariableProvider} from "../providers/globalvariable/globalvariable";
 import {ParametrePage} from "../pages/parametre/parametre";
 import {SplashScreen} from "@ionic-native/splash-screen";
@@ -17,7 +15,7 @@ import {ServiceProvider} from "../providers/service/service";
 import {OneSignal} from "@ionic-native/onesignal";
 import {MessageComponent} from "../components/message/message";
 import {PubliciteComponent} from "../components/publicite/publicite";
-import { CodeotpPage } from '../pages/codeotp/codeotp';
+import { CodeotpPage } from '../pages/connexion/codeotp/codeotp';
 declare var SMS:any;
 import { HeaderColor } from '@ionic-native/header-color';
 
@@ -38,8 +36,8 @@ export class MyApp {
       { title: "Transfert d'argent", component: TransfertPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-03.png' },
       { title: "Recharge", component: RechargePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-02.png' },
       { title: 'Monnaie electronique', component: MonnaiePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-05.png' },
-      { title: 'Gestion', component: GestionPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png' },
-      { title: 'Deconnexion', component: ConnexionPage,src:this.Glb.IMAGE_BASE_URL+'fermer.png' }
+   //   { title: 'Gestion', component: GestionPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png' },
+     // { title: 'Deconnexion', component: ConnexionPage,src:this.Glb.IMAGE_BASE_URL+'fermer.png' }
 
     ];
 

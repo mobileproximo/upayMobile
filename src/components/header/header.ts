@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 import {GlobalvariableProvider} from "../../providers/globalvariable/globalvariable";
 import {NavController} from "ionic-angular";
-import {EtatPlafondPage} from "../../pages/compte/etat-plafond/etat-plafond";
+import {EtatPlafondPage} from "../../pages/parametre/etat-plafond/etat-plafond";
 import {HomePage} from "../../pages/home/home";
-import { CodeotpPage } from '../../pages/codeotp/codeotp';
+import { CodeotpPage } from '../../pages/connexion/codeotp/codeotp';
 import { ServiceProvider } from '../../providers/service/service';
 import { MillierPipe } from '../../pipes/millier/millier';
 

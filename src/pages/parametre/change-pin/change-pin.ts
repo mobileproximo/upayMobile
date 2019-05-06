@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ServiceProvider} from "../../providers/service/service";
-import {GlobalvariableProvider} from "../../providers/globalvariable/globalvariable";
 import { LowerCasePipe } from '@angular/common';
 import { Storage } from '@ionic/storage';
+import { ServiceProvider } from '../../../providers/service/service';
+import { GlobalvariableProvider } from '../../../providers/globalvariable/globalvariable';
 
 
 @IonicPage()

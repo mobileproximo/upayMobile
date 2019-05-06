@@ -4,7 +4,6 @@ import {EncaissementPage} from "../encaissement/encaissement";
 import {TransfertPage} from "../transfert/transfert";
 import {MonnaiePage} from "../monnaie/monnaie";
 import {GlobalvariableProvider} from "../../providers/globalvariable/globalvariable";
-import {GestionPage} from "../gestion/gestion";
 import {RechargePage} from "../recharge/recharge";
 import {SplashScreen} from "@ionic-native/splash-screen";
 import { EncSenelecPage } from '../encaissement/enc-senelec/enc-senelec';
@@ -21,13 +20,15 @@ import { OrangeMoneyPage } from '../monnaie/orange-money/orange-money';
 import { EMoneyPage } from '../monnaie/e-money/e-money';
 import { WizallPage } from '../monnaie/wizall/wizall';
 import { PosteCashPage } from '../monnaie/poste-cash/poste-cash';
-import { HistoriqueTransactionPage } from '../gestion/historique-transaction/historique-transaction';
-import { EtatPlafondPage } from '../compte/etat-plafond/etat-plafond';
-import { EtatMouvementPage } from '../compte/etat-mouvement/etat-mouvement';
-import { ChangePinPage } from '../change-pin/change-pin';
+import { EtatPlafondPage } from '../parametre/etat-plafond/etat-plafond';
+import { EtatMouvementPage } from '../parametre/etat-mouvement/etat-mouvement';
 import { ServiceProvider } from '../../providers/service/service';
 import { MillierPipe } from '../../pipes/millier/millier';
 import { UpayWalletPage } from '../monnaie/upay-wallet/upay-wallet';
+import { HistoriqueTransactionPage } from '../parametre/historique-transaction/historique-transaction';
+import { ChangePinPage } from '../parametre/change-pin/change-pin';
+import { ParametrePage } from '../parametre/parametre';
+import { CodeTransfertPage } from '../parametre/code-transfert/code-transfert';
 
 @Component({
   selector: 'page-home',
@@ -54,9 +55,9 @@ export class HomePage {
       souspages:[{nom:OrangeMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Orange Money.png'},{nom:TigoCashPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Tigo Cash.png'},{nom:EMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'emoney.png'},
                 {nom:WizallPage,icone:this.Glb.IMAGE_BASE_URL+'wizall.png'},{nom:PosteCashPage,icone:this.Glb.IMAGE_BASE_URL+'postecash.png'},{nom:UpayWalletPage,icone:this.Glb.IMAGE_BASE_URL+'logo_upay.jpg'}]
     },
-      { title: 'Gestion', component: GestionPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png', expanded: false,
+      { title: 'Parametres', component: ParametrePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png', expanded: false,
       souspages:[{nom:HistoriqueTransactionPage,icone:this.Glb.IMAGE_BASE_URL+'Petite-Icon-EtatMouvementCercle.png'},{nom:EtatPlafondPage,icone:this.Glb.IMAGE_BASE_URL+'etatplf.png'},{nom:EtatMouvementPage,icone:this.Glb.IMAGE_BASE_URL+'Petite-Icon-EtatMouvementCercle.png'},
-      {nom:ChangePinPage,icone:this.Glb.IMAGE_BASE_URL+'chpin.png'}] }
+      {nom:ChangePinPage,icone:this.Glb.IMAGE_BASE_URL+'chpin.png'},{nom:CodeTransfertPage,icone:this.Glb.IMAGE_BASE_URL+'wallet.png'}] }
 
     ];
 
