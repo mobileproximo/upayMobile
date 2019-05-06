@@ -194,6 +194,7 @@ showdetails:boolean=false;
     this.envoiForm.controls['idville'].setValue(1);
     this.envoiForm.controls['prenomExp'].setValue(this.glb.PRENOM);
     this.envoiForm.controls['nomExp'].setValue(this.glb.NOM);
+    this.envoiForm.controls['telExp'].setValue(this.glb.PHONE);
     if (this.dataenvoi.oper=='0007')
       this.envoiForm.controls['idville'].setValue(this.dataenvoi.idlieu);
     this.motifs=['Consommation courante',

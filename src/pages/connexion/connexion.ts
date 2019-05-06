@@ -204,6 +204,7 @@ export class ConnexionPage {
                   this.glb.IDSESS = reponse.idSession;
                   this.glb.IDTERM = reponse.idTerm;
                   this.glb.PRENOM = reponse.prenom;
+                  this.glb.PHONE = this.Userdata.controls['login'].value;
                   this.glb.NOM = reponse.nom;
                   this.glb.PIN = reponse.pin;
                   this.oneSignal.sendTags({codeespace:this.glb.HEADER.agence});

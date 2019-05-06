@@ -40,6 +40,7 @@ export class GlobalvariableProvider {
  public READCODEOTP:string="";
  public PRENOM:string="";
  public NOM:string="";
+ public PHONE:string="";
 
   constructor(public http: HttpClient) {
     console.log('Hello GrobalvariableProvider Provider');
