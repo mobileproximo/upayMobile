@@ -19,7 +19,7 @@ export class CodeTransfertPage {
     this.glb.HEADERTITELE.title = "Mes Codes de Retrait";
     console.log('ionViewDidLoad CodeTransfertPage');
     this.serv.afficheloading();
-    this.serv.posts('recharge/',{telephone:this.glb.PHONE}).then(data=>{
+    this.serv.posts('recharge/getcondesUpay.php',{telephone:this.glb.PHONE}).then(data=>{
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=='0'){
