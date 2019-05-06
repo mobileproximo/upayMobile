@@ -22,12 +22,11 @@ export class CodeTransfertPage {
     parametres.idTerm = this.glb.IDTERM;
     parametres.session = this.glb.IDSESS;
     parametres.telephone = this.glb.PHONE;
-  //  alert(JSON.stringify(parametres))
+
     this.serv.afficheloading();
     this.serv.posts('recharge/getcondesUpay.php',parametres,{}).then(data=>{
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
-     // alert(JSON.stringify(reponse))
       if(reponse.returnCode=='0'){
         this.mesCodes = reponse.listCodeUpay.codeUpay;
       }
