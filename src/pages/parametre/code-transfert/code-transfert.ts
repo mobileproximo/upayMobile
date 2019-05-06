@@ -18,8 +18,12 @@ export class CodeTransfertPage {
     this.glb.HEADERTITELE.src = this.glb.IMAGE_BASE_URL+"Petite-Icon-06.png";
     this.glb.HEADERTITELE.title = "Mes Codes de Retrait";
     console.log('ionViewDidLoad CodeTransfertPage');
+    let parametres:any={};
+    parametres.idTerm = this.glb.IDTERM;
+    parametres.session = this.glb.IDSESS;
+    parametres.telephone = this.glb.PHONE;
     this.serv.afficheloading();
-    this.serv.posts('recharge/getcondesUpay.php',{telephone:this.glb.PHONE}).then(data=>{
+    this.serv.posts('recharge/getcondesUpay.php',parametres).then(data=>{
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=='0'){
