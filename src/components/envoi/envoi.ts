@@ -56,6 +56,7 @@ showdetails:boolean=false;
   }
   reinitialiser(){
     this.envoiForm.reset();
+    this.envoiForm.controls['idville'].setValue(1);
     this.showdetails=false;
 
   }
