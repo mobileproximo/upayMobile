@@ -8,7 +8,7 @@ import { GlobalvariableProvider } from '../../../providers/globalvariable/global
   templateUrl: 'code-transfert.html',
 })
 export class CodeTransfertPage {
-  private mesCodes:any;
+  private mesCodes:any=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private serv:ServiceProvider,private glb:GlobalvariableProvider) {
   }
@@ -31,7 +31,10 @@ export class CodeTransfertPage {
         let codes = reponse.listCodeUpay.codeUpay;
         if(codes.length)
         this.mesCodes = codes;
-        else this.mesCodes[0]= codes;
+        else {
+          this.mesCodes = [];
+          this.mesCodes[0]= codes
+        };
       }
       else this.serv.showError(reponse.errorLabel)
   }).catch(err=>{
