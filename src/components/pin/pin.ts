@@ -83,7 +83,7 @@ export class PinComponent implements OnChanges{
 
   handleInput(pin: any) {
     if (pin === "clear") {
-      this.pin = "";
+      this.pin = this.pin.slice(0,this.pin.length-1);
       return;
     }
     if (pin !== "ok")
