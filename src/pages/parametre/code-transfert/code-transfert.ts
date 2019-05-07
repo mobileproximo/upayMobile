@@ -27,7 +27,6 @@ export class CodeTransfertPage {
     this.serv.posts('recharge/getcondesUpay.php',parametres,{}).then(data=>{
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
-      alert(JSON.stringify(reponse));
       if(reponse.returnCode=='0'){
         let codes = reponse.listCodeUpay.codeUpay;
         if(codes.length)
