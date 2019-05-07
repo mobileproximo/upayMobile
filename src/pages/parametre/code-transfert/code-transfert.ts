@@ -28,7 +28,10 @@ export class CodeTransfertPage {
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=='0'){
-        this.mesCodes = reponse.listCodeUpay.codeUpay;
+        let codes = reponse.listCodeUpay.codeUpay;
+        if(codes.length)
+        this.mesCodes = codes;
+        else this.mesCodes[0]=codes;
       }
       else this.serv.showError(reponse.errorLabel)
   }).catch(err=>{
