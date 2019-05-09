@@ -5,6 +5,7 @@ import { LowerCasePipe } from '@angular/common';
 import { Storage } from '@ionic/storage';
 import { ServiceProvider } from '../../../providers/service/service';
 import { GlobalvariableProvider } from '../../../providers/globalvariable/globalvariable';
+import { ConnexionPage } from '../../connexion/connexion';
 
 
 @IonicPage()
@@ -70,6 +71,7 @@ export class ChangePinPage {
       if(reponse.returnCode=='0'){
         this.serv.showAlert(reponse.Message);
         this.Userdata.reset();
+        this.navCtrl.setRoot(ConnexionPage);
       }
       else this.serv.showError(reponse.errorLabel)
     }).catch(err=>{
