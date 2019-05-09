@@ -29,6 +29,7 @@ import { HistoriqueTransactionPage } from '../parametre/historique-transaction/h
 import { ChangePinPage } from '../parametre/change-pin/change-pin';
 import { ParametrePage } from '../parametre/parametre';
 import { CodeTransfertPage } from '../parametre/code-transfert/code-transfert';
+import { ConnexionPage } from '../connexion/connexion';
 
 @Component({
   selector: 'page-home',
@@ -125,6 +126,10 @@ export class HomePage {
       this.serv.showError("Impossible d'atteindre le serveur");
 
     })
+  }
+  logout(){
+    console.log('test logout')
+    this.navCtrl.setRoot(ConnexionPage)
   }
 
 }

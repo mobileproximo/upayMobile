@@ -1,7 +1,7 @@
 <ion-content >
   <div  *ngIf="!Glb.ShowPin">
     <div class="cardwallet">
-     <div style="display: flex">
+     <div style="display: flex; align-items:center">
        <div class="cadran">
          <img style="width:100%" src="assets/imgs/upay.png" alt="proximo">
        </div>
@@ -9,10 +9,13 @@
          <span style="color: #e4e4e4">Bienvenu,</span>
          <span style="color:#fff;font-weight: 600">{{Glb.HEADER.agence}}</span>
        </div>
+       <div (click)="logout()" style="display:flex;justify-content:center;align-items:center;background:#fff;position: absolute;right: 0;height: 31px;width: 65px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;">
+          <ion-icon style="font-size: 1.4em;" name="md-log-out"></ion-icon>
+        </div>
      </div>
 
       <div class="balance">
-        <div style="flex:1;">
+        <div style="flex:2;">
 
           <div style="display: flex;flex-direction: column">
             <span style="color:#9f9f9f;font-size: 10px;">XOF, PLAFOND</span>
@@ -33,10 +36,10 @@
         </div>
         <div style="flex:1;display: flex;flex-direction: column">
           <div style="display: flex;align-items: center;justify-content: flex-end;" (click)="getPlafond()">
-            <img style="width: 27%;max-width: 100px;" src="assets/imgs/reload.png" alt="proximo">
+            <img style="width: 30%;max-width: 100px;" src="assets/imgs/reload.png" alt="proximo">
           </div>
           <div style="height: 100%;display: flex;align-items: flex-end;justify-content: flex-end;">
-            <img style="width:41%;max-width: 100px;" src="assets/imgs/logo_wizall.jpg" alt="proximo">
+            <img style="width:45%;max-width: 100px;" src="assets/imgs/logo_wizall.jpg" alt="proximo">
           </div>
         </div>
       </div>
