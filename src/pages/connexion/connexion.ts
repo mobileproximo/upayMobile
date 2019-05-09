@@ -151,7 +151,7 @@ export class ConnexionPage {
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=="0"){
-       // this.serv.showAlert(reponse.returnMsg);
+    
         this.navCtrl.push(CodeotpPage,{userdata:userdata})
       }
       else this.serv.showError(reponse.errorLabel);

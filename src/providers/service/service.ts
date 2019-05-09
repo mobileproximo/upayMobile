@@ -10,7 +10,7 @@ import {Toast} from "@ionic-native/toast";
 @Injectable()
 export class ServiceProvider {
   loading: any;
-  constructor(public toast:Toast,public app:App,public modalCrtl:ModalController,public number:MillierPipe,public loadingCtrl:LoadingController,public alertCtrl:AlertController,public CONST:GlobalvariableProvider,public http: HTTP,public bluetooth:BluetoothSerial,public glb:GlobalvariableProvider) {
+  constructor(public toast:Toast,public app:App,public modalCrtl:ModalController,public number:MillierPipe,public loadingCtrl:LoadingController,public alertCtrl:AlertController, public http: HTTP,public bluetooth:BluetoothSerial,public glb:GlobalvariableProvider) {
     console.log('Hello ServiceProvider Provider');
 
   }
@@ -45,7 +45,7 @@ export class ServiceProvider {
       return;
     }
     else{
-      let url = this.CONST.BASEURL+service;
+      let url = this.glb.BASEURL+service;
       console.log(headers);
       console.log(url);
       console.log(body);
@@ -140,8 +140,7 @@ export class ServiceProvider {
     let tabNombres = valeur.split('')
     let conditionA:boolean =(tabNombres[0]==tabNombres[1] && tabNombres[1]==tabNombres[2] && tabNombres[2]==tabNombres[3]);
     let conditionB:boolean =(tabNombres[0]*1+1==tabNombres[1]*1 && tabNombres[1]*1+1==tabNombres[2]*1 && tabNombres[2]*1+1==tabNombres[3]*1);
-console.log(conditionA)
-console.log(conditionB)
+
     if(conditionA || conditionB)
     return true;
     return false;

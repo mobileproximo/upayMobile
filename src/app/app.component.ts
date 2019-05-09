@@ -18,7 +18,7 @@ import {PubliciteComponent} from "../components/publicite/publicite";
 import { CodeotpPage } from '../pages/connexion/codeotp/codeotp';
 declare var SMS:any;
 import { HeaderColor } from '@ionic-native/header-color';
-
+import { AlertController } from 'ionic-angular';
 
 
 @Component({
@@ -28,8 +28,9 @@ export class MyApp {
   rootPage:any = ConnexionPage;
   private pages:any;
   @ViewChild(Nav) nav: Nav;
+  public alertShown:boolean = false;
 
-  constructor(private headerColor: HeaderColor,private modalCrtl:ModalController,private oneSignal:OneSignal,private splashScreen:SplashScreen,public network:Network,public platform: Platform, statusBar: StatusBar,public Glb:GlobalvariableProvider,public serv:ServiceProvider) {
+  constructor(private alertCtrl: AlertController,  private headerColor: HeaderColor,private modalCrtl:ModalController,private oneSignal:OneSignal,private splashScreen:SplashScreen,public network:Network,public platform: Platform, statusBar: StatusBar,public Glb:GlobalvariableProvider,public serv:ServiceProvider) {
     this.pages = [
       { title: 'Acceuil', component: HomePage,src:this.Glb.IMAGE_BASE_URL+'Icon-08.png' },
       { title: 'Paiement Factures', component: EncaissementPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-04.png' },
@@ -50,6 +51,11 @@ export class MyApp {
 
 // set status bar to white
     statusBar.backgroundColorByHexString('#639dd5');
+    platform.registerBackButtonAction(() => {
+      if (this.alertShown==false) {
+        this.presentConfirm();
+      }
+    }, 0)
       this.platform.pause.subscribe(() => {
 
         Glb.DATEPAUSE=new Date();
@@ -156,6 +162,32 @@ document.addEventListener('onSMSArrive', (e:any)=>{
       this.serv.showToast("Vous êtes maintenant en ligne");
       this.Glb.ISCONNECTED =true;
 
+    });
+  }
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'UPay',
+      message: 'Voulez-vous vraiment quitter l\'application?',
+      buttons: [
+        {
+          text: 'NON',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+            this.alertShown=false;
+          }
+        },
+        {
+          text: 'OUI',
+          handler: () => {
+            console.log('Yes clicked');
+            this.platform.exitApp();
+          }
+        }
+      ]
+    });
+     alert.present().then(()=>{
+      this.alertShown=true;
     });
   }
 }
