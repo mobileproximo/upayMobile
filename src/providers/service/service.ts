@@ -151,7 +151,6 @@ export class ServiceProvider {
   showAlert(message :string){
     let alert = this.alertCtrl.create({
       title: '<div class="success"><img style="width: 70%" src="assets/imgs/upay.png"><br><b>'+message+'!</b> </div>',
-      //subTitle: message,
       cssClass:'alertSucces',
       buttons: ['OK']
     });

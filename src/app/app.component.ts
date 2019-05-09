@@ -51,11 +51,23 @@ export class MyApp {
 
 // set status bar to white
     statusBar.backgroundColorByHexString('#639dd5');
-    platform.registerBackButtonAction(() => {
+/*     platform.registerBackButtonAction(() => {
       if (this.alertShown==false) {
         this.presentConfirm();
       }
-    }, 0)
+    }, 0) */
+    this.platform.registerBackButtonAction(() => {
+      if (this.nav.length() == 1) {
+          if (!this.alertShown) {
+              this.presentConfirm();
+          } else {
+              this.alertShown = false;
+          }
+      }
+
+      this.nav.pop();
+  });
+
       this.platform.pause.subscribe(() => {
 
         Glb.DATEPAUSE=new Date();
