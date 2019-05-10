@@ -251,7 +251,7 @@ vider(){
         this.glb.showRecu=true;
         this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
         this.glb.dateUpdate = this.serv.getCurrentDate();
-
+        this.numfacture='';
         this.glb.recu.Oper = this.dataencaissement.operateur;
       }
       else{

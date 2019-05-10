@@ -219,15 +219,15 @@ export class EncSenelecPage {
       parametre.infoclient.adresse = this.infosClient.controls['adresse'].value;
       parametre.image = this.dataencaissement.image;
       parametre.oper = '0027';
-      parametre.recharge={};
-      parametre.operation='Encaissement Facture Senelec';
+      parametre.recharge = {};
+      parametre.operation = 'Encaissement Facture Senelec';
       parametre.recharge.montant=this.total;
       parametre.factures = this.facturescoches;
-      parametre.nbrfact= this.nombreFacture;
+      parametre.nbrfact = this.nombreFacture;
       parametre.mnttotal = this.total.replace(/ /g, "");
-      parametre.infoclient.pin=codePin;
-      parametre.idTerm=this.glb.IDTERM;
-      parametre.session= this.glb.IDSESS;
+      parametre.infoclient.pin = codePin;
+      parametre.idTerm = this.glb.IDTERM;
+      parametre.session = this.glb.IDSESS;
       this.serv.afficheloading();
       this.serv.posts(this.dataencaissement.encaissementfile,parametre,{}).then(data=>{
         this.serv.dismissloadin();
@@ -266,6 +266,7 @@ export class EncSenelecPage {
           this.glb.HEADER.montant= this.number.transform(reponse.mntPlfap);
           this.glb.dateUpdate = this.serv.getCurrentDate();
           this.glb.recu.Oper = this.dataencaissement.operateur;
+          this.infosClient.reset();
         }
         else{
           this.serv.showError(reponse.errorLabel)

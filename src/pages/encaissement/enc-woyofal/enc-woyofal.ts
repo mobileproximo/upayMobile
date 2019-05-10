@@ -169,6 +169,7 @@ export class EncWoyofalPage {
         this.glb.recu.mntFrais = this.number.transform(reponse.mntFrais);
         this.glb.recu.mntFact = this.number.transform(reponse.mntFact);
         this.glb.recu.mntTotal = this.number.transform(reponse.mntTotal);
+        this.clientForm.reset();
         this.glb.showRecu=true;
       }
       else{
