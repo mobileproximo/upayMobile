@@ -84,7 +84,7 @@ export class EncSenelecPage {
       this.serv.afficheloading();
       this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
         let reponse = JSON.parse(data.data);
-       // alert("ReleveFacture "+JSON.stringify(reponse));
+        alert("ReleveFacture "+JSON.stringify(reponse));
         //this.serv.dismissloadin();
         if(reponse!=false){
           if(reponse.returnCode=='0'){
@@ -94,7 +94,7 @@ export class EncSenelecPage {
             this.serv.posts('encaissement/releveClient.php',parametre,{}).then(dataclient=>{
               this.serv.dismissloadin();
               let reponseclient = JSON.parse(dataclient.data);
-              //alert("ReleveFacture "+JSON.stringify(reponseclient));
+              alert("ReleveFacture "+JSON.stringify(reponseclient));
               if(reponseclient.returnCode=='0'){
                 this.infosClient.controls['prenomClient'].setValue(reponseclient.prenom);
                 this.infosClient.controls['nomClient'].setValue(reponseclient.nom);
@@ -232,25 +232,26 @@ export class EncSenelecPage {
       this.serv.posts(this.dataencaissement.encaissementfile,parametre,{}).then(data=>{
         this.serv.dismissloadin();
         let reponse:any = JSON.parse(data.data);
-      //  alert(JSON.stringify(reponse))
+        alert(JSON.stringify(reponse))
         if(reponse.returnCode=='0'){
         this.glb.ShowPin =false;
           this.glb.recu = reponse;
           if (!reponse.Factures.Facture.length) {
+            this.vider();
             this.glb.recu = {};
             this.glb.recu.Oper = this.dataencaissement.operateur;
             this.glb.recu.dtTrx = reponse.dtTrx;
-            this.glb.recu.NomClient = reponse.NomClient;
+            this.glb.recu.NomClient =parametre.infoclient.prenomClient+" "+parametre.infoclient.nomClient;
             this.glb.recu.IdClient = reponse.IdClient;
             if(typeof(reponse.telClient)!="string")
             this.glb.recu.telClient="";
             this.glb.recu.telClient = reponse.telClient;
             this.glb.recu.nbrFact = reponse.nbrFact;
             this.glb.recu.mntTotal = reponse.mntTotal;
-            this.glb.recu.mntFrais = reponse.mntFrais;
-            this.glb.recu.mntTbr = reponse.mntTbr;
+            this.glb.recu.mntFrais = reponse.mntTFrais;
+            this.glb.recu.mntTbr = reponse.mntTtbr;
             this.glb.recu.mntPlfap = reponse.mntPlfap;
-            this.glb.recu.mntFact = reponse.mntFact;
+            this.glb.recu.mntFact = reponse.mntTFact;
             this.glb.recu.Factures = {};
             this.glb.recu.Factures.Facture = [];
             this.glb.recu.Factures.Facture.push(reponse.Factures.Facture);

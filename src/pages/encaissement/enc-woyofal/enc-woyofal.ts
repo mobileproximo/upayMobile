@@ -155,6 +155,7 @@ export class EncWoyofalPage {
       let reponse = JSON.parse(data.data);
       //alert(JSON.stringify(reponse))
       if(reponse.returnCode=="0"){
+        this.vider();
         this.glb.recu = reponse;
         this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
         this.glb.recu.agence = this.glb.HEADER.agence;

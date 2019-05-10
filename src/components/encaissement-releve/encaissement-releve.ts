@@ -220,6 +220,7 @@ vider(){
       this.serv.dismissloadin();
       let reponse:any = JSON.parse(data.data);
       if(reponse.returnCode=='0'){
+        this.vider();
         this.glb.ShowPin = false;
         this.glb.recu = reponse;
         if (!reponse.Factures.Facture.length) {
