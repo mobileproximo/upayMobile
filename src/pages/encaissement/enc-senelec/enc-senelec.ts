@@ -174,7 +174,7 @@ export class EncSenelecPage {
       if(this.listefactures[id].checked)
       {
         if(this.nombreFacture==1){
-          this.serv.showError("Désolé, Vous ne pouvez pas payez plus 3 factures");
+          this.serv.showError("Désolé, Vous ne pouvez pas payez plus d'une factures");
           setTimeout(() => {
             this.listefactures[id].checked=false;
           }, 100);
