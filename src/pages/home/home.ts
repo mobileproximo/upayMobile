@@ -50,7 +50,7 @@ export class HomePage {
             souspages:[{nom:EncSenelecPage,icone:this.Glb.IMAGE_BASE_URL+'Petite-Icon-24.png'},{nom:EncSdePage,icone:this.Glb.IMAGE_BASE_URL+'sde.png'},{nom:EncWoyofalPage,icone:this.Glb.IMAGE_BASE_URL+'woyofal.png'}] },
       { title: "Transfert d'argent", component: TransfertPage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-03.png', expanded: false,
             souspages:[{nom:ProxicashPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Proxicash.png'},{nom:RiaPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Ria.png'}] },
-      { title: "Recharge electronique", component: RechargePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-02.png', expanded: false,
+      { title: "Recharge", component: RechargePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-02.png', expanded: false,
             souspages:[{nom:OrangePage,icone:this.Glb.IMAGE_BASE_URL+'logo_Orange.png'},{nom:IziPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Tigo.png'},{nom:YakalmaPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Expresso.png'},{nom:RapidoPage,icone:this.Glb.IMAGE_BASE_URL+'logo_rapido.png'}] },
       { title: 'Monnaie electronique', component: MonnaiePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-05.png', expanded: false,
       souspages:[{nom:OrangeMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Orange Money.png'},{nom:TigoCashPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Tigo Cash.png'},{nom:EMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'emoney.png'},
