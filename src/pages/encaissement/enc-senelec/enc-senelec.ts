@@ -84,7 +84,7 @@ export class EncSenelecPage {
       this.serv.afficheloading();
       this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
         let reponse = JSON.parse(data.data);
-        alert("ReleveFacture "+JSON.stringify(reponse));
+        //alert("ReleveFacture "+JSON.stringify(reponse));
         //this.serv.dismissloadin();
         if(reponse!=false){
           if(reponse.returnCode=='0'){
@@ -95,7 +95,7 @@ export class EncSenelecPage {
             this.serv.posts('encaissement/releveClient.php',parametre,{}).then(dataclient=>{
               this.serv.dismissloadin();
               let reponseclient = JSON.parse(dataclient.data);
-              alert("ReleveFacture "+JSON.stringify(reponseclient));
+             // alert("ReleveFacture "+JSON.stringify(reponseclient));
               if(reponseclient.returnCode=='0'){
                 this.infosClient.controls['prenomClient'].setValue(reponseclient.prenom);
                 this.infosClient.controls['nomClient'].setValue(reponseclient.nom);
