@@ -1,4 +1,12 @@
 page-home {
+  .fleche{
+    transform: rotate(0deg) !important;
+    transition: transform 0.3s linear 0s;
+  }
+
+  .loadicon{
+    transform: rotate(-90deg);
+}
 .cardwallet{
   background: #649CD4;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #649CD4, #A1C6EA);  /* Chrome 10-25, Safari 5.1-6 */
