@@ -90,6 +90,7 @@ export class EncSenelecPage {
           if(reponse.returnCode=='0'){
             this.showdetails=true;
             this.nombreFacture=0;
+            this.infosClient.controls['numfacture'].setValue(reponse.IdClient);
             //Je fais un releve Client
             this.serv.posts('encaissement/releveClient.php',parametre,{}).then(dataclient=>{
               this.serv.dismissloadin();
