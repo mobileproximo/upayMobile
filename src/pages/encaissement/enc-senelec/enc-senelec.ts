@@ -75,6 +75,7 @@ export class EncSenelecPage {
   }
     releve(){
       this.vider();
+      this.infosClient.reset();
       this.newclient=false;
       let parametre:any= {};
       parametre.numpolice = this.infosClient.controls['numfacture'].value;
