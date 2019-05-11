@@ -81,7 +81,6 @@ export class EncSenelecPage {
       parametre.idTerm = this.glb.IDTERM;
       parametre.session = this.glb.IDSESS;
       parametre.oper = this.dataencaissement.oper;
-      alert("parametre Enc Senelec "+JSON.stringify(parametre));
       this.serv.afficheloading();
       this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
         let reponse = JSON.parse(data.data);
@@ -230,6 +229,8 @@ export class EncSenelecPage {
       parametre.infoclient.pin = codePin;
       parametre.idTerm = this.glb.IDTERM;
       parametre.session = this.glb.IDSESS;
+      alert("parametre Enc Senelec "+JSON.stringify(parametre));
+
       this.serv.afficheloading();
       this.serv.posts(this.dataencaissement.encaissementfile,parametre,{}).then(data=>{
         this.serv.dismissloadin();
