@@ -229,13 +229,11 @@ export class EncSenelecPage {
       parametre.infoclient.pin = codePin;
       parametre.idTerm = this.glb.IDTERM;
       parametre.session = this.glb.IDSESS;
-      alert("parametre Enc Senelec "+JSON.stringify(parametre));
-
       this.serv.afficheloading();
       this.serv.posts(this.dataencaissement.encaissementfile,parametre,{}).then(data=>{
         this.serv.dismissloadin();
         let reponse:any = JSON.parse(data.data);
-        alert(JSON.stringify(reponse))
+       // alert(JSON.stringify(reponse))
         if(reponse.returnCode=='0'){
         this.glb.ShowPin =false;
           this.glb.recu = reponse;
