@@ -214,7 +214,7 @@ export class EncSenelecPage {
         let parametre:any={};
       parametre.infoclient ={};
       parametre.infoclient.nomClient = this.infosClient.controls['nomClient'].value;
-      parametre.infoclient.prenomclient = this.infosClient.controls['prenomClient'].value;
+      parametre.infoclient.prenomClient = this.infosClient.controls['prenomClient'].value;
       parametre.infoclient.idclient = this.factures.IdClient;
       parametre.infoclient.telephone = this.infosClient.controls['telephone'].value;
       parametre.infoclient.adresse = this.infosClient.controls['adresse'].value;
