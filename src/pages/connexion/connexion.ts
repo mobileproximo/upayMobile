@@ -56,7 +56,7 @@ export class ConnexionPage {
         }
 
       });
-      this.getPermission();
+    //  this.getPermission();
 
   }
 

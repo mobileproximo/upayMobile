@@ -14,7 +14,7 @@ export class ServiceProvider {
     console.log('Hello ServiceProvider Provider');
 
   }
-  padding(chaine,taillepadding){
+  padding(chaine: string,taillepadding: number){
     chaine=chaine+"";
     if (chaine.length>= taillepadding)
       return chaine;
@@ -31,7 +31,7 @@ export class ServiceProvider {
     return chaine;
 
   }
-  showToast(message){
+  showToast(message: string){
     this.toast.showLongCenter(message).subscribe(value => {
       console.log(value)
     })
@@ -106,7 +106,7 @@ export class ServiceProvider {
 
   }
 
-  liaison(id) {
+  liaison(id: string) {
     this.glb.liaisonreussie=false;
     this.afficheloading();
     this.bluetooth.connect(id).subscribe(data => {
@@ -120,7 +120,7 @@ export class ServiceProvider {
     })
 
   }
-  linking(id){
+  linking(id: string){
     return new Promise( (resolve, reject) => {
 
       this.bluetooth.connect(id).subscribe(data => {
@@ -202,8 +202,9 @@ export class ServiceProvider {
     let parametre={'idPartn':this.glb.IDPART,'idTerm':this.glb.IDTERM,'session':this.glb.IDSESS}
     return this.posts('plafond/solde.php',parametre,{});
   }
-  saisiecodepin(data) {
-    return new Promise((resolve, reject) => {
+   saisiecodepin(data: { operation: string; recharge: { telephone: string; oper: string; sousop: string; montant: string; frais: { replace: (arg0: RegExp, arg1: string) => number; }; }; image: string; }) {
+    return new Promise((resolve, reject) => {});
+    /*     return new Promise((resolve, reject) => {
       let ligneMontant="",lignetelephone="";
       let oper ="";
       if(data.operation)
@@ -225,7 +226,7 @@ export class ServiceProvider {
       {
         if(data.recharge.frais)
         {
-          let mttc:any=  data.recharge.montant.replace(/ /g, "")*1 + data.recharge.frais.replace(/ /g, "")*1;
+          let mttc: any =  data.recharge.montant.replace(/ /g, "")*1 + data.recharge.frais.replace(/ /g, "")*1;
           mttc+="";
           ligneMontant="<h6>Montant TTC : <font color='red'>"+this.number.transform(mttc)+"</font> </h6><br>";
         }
@@ -270,10 +271,10 @@ export class ServiceProvider {
 
       alert.present();
 
-    });
+    }); */
   }
 
-   verificationnumero(telephone) {
+   verificationnumero(telephone: string) {
      telephone=telephone.replace(/-/g, "");
      telephone=telephone.replace(/ /g, "");
      console.log('telephone '+telephone)
@@ -281,7 +282,7 @@ export class ServiceProvider {
      let retour = numeroautorisé.indexOf(telephone.substring(0,2));
      return retour==-1;
   }
-  getSoup(oper,codeSoup) {
+  getSoup(oper: string,codeSoup: string) {
     if(oper=="Tigo")
     {
       if(codeSoup=="2")
@@ -297,7 +298,7 @@ export class ServiceProvider {
     }
     return oper;
   }
-  listeimprimanteAutorisees(data) {
+  listeimprimanteAutorisees(data: any[]) {
     let liste=[];
 
     for(let i=0;i<this.glb.ImprimanteAutorisee.length;i++)
@@ -315,7 +316,7 @@ export class ServiceProvider {
     return liste;
   }
   //retourne la difference entre deux dates
-dateDiff(date1, date2){
+dateDiff(date1: number, date2: number){
   let diff:any = {}                           // Initialisation du retour
   let tmp = date2 - date1;
 

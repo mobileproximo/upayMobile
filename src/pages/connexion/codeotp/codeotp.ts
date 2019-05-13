@@ -22,7 +22,7 @@ export class CodeotpPage  {
     this.userdata = this.navParams.get("userdata");
 
 
-    this.getPermission();
+   // this.getPermission();
   }
 
   getPermission(){

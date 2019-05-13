@@ -41,7 +41,7 @@ showdetails:boolean=false;
       telBen:['',Validators.required],
       indicatif:[''],
       idville:['',Validators.required]
-    })
+    });
     this.glb.modeTransactionnel = false;
 
   }
@@ -147,50 +147,7 @@ showdetails:boolean=false;
     this.dataForPin.montant=this.dataForPin.montantTTC;
     this.dataForPin.operation='Envoi '+this.dataenvoi.operateur;
     this.glb.ShowPin = true;
-/*     let parametres:any= {};
-    parametres.image = this.dataenvoi.image;
-    parametres.oper = this.dataenvoi.oper;
-    parametres.recharge={};
-    parametres.recharge.montant = this.envoiForm.controls['montantTTC'].value;
-    parametres.operation ='Envoi';
-    parametres.denv = this.envoiForm.getRawValue();
-    this.envServ.saisiecodepin(parametres).then(data=>{
-      let value :any= data;
-      parametres.session = this.glb.IDSESS;
-      parametres.idTerm = this.glb.IDTERM;
-      parametres.denv.pin = value.pin;
-      //alert(JSON.stringify(parametres));
-      this.envServ.afficheloading();
-      this.envServ.posts('transfert/envoicash.php',parametres,{}).then(data=>{
-        this.envServ.dismissloadin();
-        let reponse:any=JSON.parse(data.data);
-        if(reponse.returnCode=='0'){
-          this.glb.recu = reponse;
-          this.glb.HEADER.montant = this.number.transform(reponse.mntPlfap);
-          this.glb.recu.guichet = this.glb.IDTERM.substring(5,6);
-          this.glb.recu.agence = this.glb.HEADER.agence;
-          this.glb.recu.dtTrx = this.formdate.transform(this.glb.recu.dtTrx);
-          this.glb.recu.codTrans = this.formatcode.transform(this.glb.recu.codTrans, 3, ' ');
-          this.glb.recu.operateur=this.dataenvoi.operateur;
-          this.glb.recu.operation = 'ENVOI';
-          this.glb.showRecu = true;
-
-        }
-        else {
-          this.envServ.showError(reponse.errorLabel)
-        }
-
-      }).catch(err=>{
-        this.envServ.dismissloadin();
-        this.envServ.showError("impossible d'atteindre le serveur");
-      })
-    }).catch(err=>{
-
-    })
- */
-
   }
-
 
   ngOnInit(): void {
     console.log(this.dataenvoi.oper)

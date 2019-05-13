@@ -136,7 +136,7 @@ export class EncWoyofalPage {
       this.serv.showError("Veuillez bien renseigner le numéro de téléphone du client");
       return false;
     }
-    let parametre:any={};
+    let parametre:any = {};
     parametre.factures=this.clientForm.getRawValue();
     parametre.image = this.glb.IMAGE_BASE_URL+'Icon-23.png';
     parametre.recharge={};
