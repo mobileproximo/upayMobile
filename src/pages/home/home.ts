@@ -56,7 +56,7 @@ export class HomePage {
       souspages:[{nom:OrangeMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Orange Money.png'},{nom:TigoCashPage,icone:this.Glb.IMAGE_BASE_URL+'logo_Tigo Cash.png'},{nom:EMoneyPage,icone:this.Glb.IMAGE_BASE_URL+'emoney.png'},
                 {nom:WizallPage,icone:this.Glb.IMAGE_BASE_URL+'wizall.png'},{nom:PosteCashPage,icone:this.Glb.IMAGE_BASE_URL+'postecash.png'},{nom:UpayWalletPage,icone:this.Glb.IMAGE_BASE_URL+'logo_upay.jpg'}]
     },
-      { title: 'Parametres', component: ParametrePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png', expanded: false,
+      { title: 'Gestion', component: ParametrePage,src:this.Glb.IMAGE_BASE_URL+'Petite-Icon-06.png', expanded: false,
       souspages:[{nom:HistoriqueTransactionPage,icone:this.Glb.IMAGE_BASE_URL+'Petite-Icon-EtatMouvementCercle.png'},{nom:EtatPlafondPage,icone:this.Glb.IMAGE_BASE_URL+'etatplf.png'},{nom:EtatMouvementPage,icone:this.Glb.IMAGE_BASE_URL+'Petite-Icon-EtatMouvementCercle.png'},
       {nom:ChangePinPage,icone:this.Glb.IMAGE_BASE_URL+'chpin.png'},{nom:CodeTransfertPage,icone:this.Glb.IMAGE_BASE_URL+'wallet.png'}] }
 
