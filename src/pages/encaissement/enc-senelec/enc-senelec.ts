@@ -87,7 +87,7 @@ export class EncSenelecPage {
       this.serv.afficheloading();
       this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
         let reponse = JSON.parse(data.data);
-        alert("ReleveFacture "+JSON.stringify(reponse));
+        //alert("ReleveFacture "+JSON.stringify(reponse));
         if(reponse!=false){
           if(reponse.returnCode=='0'){
             this.showdetails=true;
