@@ -86,12 +86,10 @@ export class EncSenelecPage {
       this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
         let reponse = JSON.parse(data.data);
         //alert("ReleveFacture "+JSON.stringify(reponse));
-        //this.serv.dismissloadin();
         if(reponse!=false){
           if(reponse.returnCode=='0'){
             this.showdetails=true;
             this.nombreFacture=0;
-           // this.infosClient.controls['numfacture'].setValue(reponse.IdClient);
             //Je fais un releve Client
             this.serv.posts('encaissement/releveClient.php',parametre,{}).then(dataclient=>{
               this.serv.dismissloadin();
