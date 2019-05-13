@@ -75,9 +75,11 @@ export class EncSenelecPage {
   }
     releve(){
       this.vider();
-      this.infosClient.reset();
-      this.newclient=false;
       let parametre:any= {};
+      parametre.numpolice = this.infosClient.controls['numfacture'].value;
+      this.infosClient.reset();
+      this.infosClient.controls.numfacture.setValue(parametre.numpolice);
+      this.newclient=false;
       parametre.numpolice = this.infosClient.controls['numfacture'].value;
       parametre.idTerm = this.glb.IDTERM;
       parametre.session = this.glb.IDSESS;
