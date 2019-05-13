@@ -151,7 +151,7 @@ export class ConnexionPage {
       this.serv.dismissloadin();
       let reponse = JSON.parse(data.data);
       if(reponse.returnCode=="0"){
-    
+
         this.navCtrl.push(CodeotpPage,{userdata:userdata})
       }
       else this.serv.showError(reponse.errorLabel);
@@ -165,7 +165,6 @@ export class ConnexionPage {
   }
   connecter(){
     this.toclear = false;
-    //this.navCtrl.setRoot(HomePage);
 
     this.sim.requestReadPermission().then(
       () => {

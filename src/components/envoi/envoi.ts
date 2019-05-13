@@ -57,6 +57,9 @@ showdetails:boolean=false;
   reinitialiser(){
     this.envoiForm.reset();
     this.envoiForm.controls['idville'].setValue(1);
+    this.envoiForm.controls['prenomExp'].setValue(this.glb.PRENOM);
+    this.envoiForm.controls['nomExp'].setValue(this.glb.NOM);
+    this.envoiForm.controls['telExp'].setValue(this.glb.PHONE);
     this.showdetails=false;
 
   }
