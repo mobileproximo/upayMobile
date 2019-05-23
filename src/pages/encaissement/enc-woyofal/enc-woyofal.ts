@@ -55,6 +55,7 @@ export class EncWoyofalPage {
     parametre.session = this.glb.IDSESS;
     parametre.oper='0029';
     parametre.numpolice = this.clientForm.controls['numcompteur'].value;
+
     this.serv.afficheloading();
     this.serv.posts('encaissement/releve.php',parametre,{}).then(data=>{
       this.serv.dismissloadin();

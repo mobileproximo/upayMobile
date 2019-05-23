@@ -53,7 +53,7 @@ export class EtatMouvementPage {
   changebank(){
     this.showdetails=false;
   }
-  listermvt(){
+listermvt(){
 this.showdetails=false;
     let paramete:any = this.critere.getRawValue();
     paramete.idTerm = this.glb.IDTERM;
