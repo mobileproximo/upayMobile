@@ -18,15 +18,15 @@ import {CoupureChainePipe} from "../../pipes/coupure-chaine/coupure-chaine";
 })
 export class EncaissementReleveComponent implements OnInit{
   @Input('dataencaissement') dataencaissement;
-  private numfacture;
-  private  factures:any;
-  private listefactures:any;
-  private hastel:boolean=true;
-  private total:any;
-  private nombreFacture:number=0;
-  private facturescoches:any=[];
-  private showdetails:boolean=false;
-  private telephone;
+  public numfacture;
+  public  factures:any;
+  public listefactures:any;
+  public hastel:boolean=true;
+  public total:any;
+  public nombreFacture:number=0;
+  public facturescoches:any=[];
+  public showdetails:boolean=false;
+  public telephone;
   dataForPin:any={};
   constructor(public formatdate:FormatdatePipe,public coupurechaine:CoupureChainePipe,public formatphone:FormatphonePipe,public serv:ServiceProvider,public glb:GlobalvariableProvider,public number:MillierPipe) {
     console.log('Hello EncaissementReleveComponent Component');

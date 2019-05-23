@@ -21,7 +21,7 @@
         <span class="titre">total </span><strong>:</strong> <span class="info">{{total}}</span><br>
         <span class="titre" *ngIf="telephone">Téléphone</span><strong *ngIf="telephone">:</strong> <span class="info" *ngIf="telephone">{{telephone}}</span><br>
         <div class="field" *ngIf="!hastel">
-          <input type="tel" maxlength="12" [(ngModel)]="telephone" name="telephone" (input)="changetel()" (blur)="blurtel()"  (focus)="focustel()"  style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="fullname" id="telben" placeholder="(*)Téléphone">
+          <input type="tel" maxlength="12" [(ngModel)]="telephone" name="telephone" (input)="changetel()" (blur)="blurtel()"  (focus)="focustel()"  style="border: none; border-bottom: 2px solid #639dd5; width: 100% !important;" name="telben" id="telben" placeholder="(*)Téléphone">
           <label for="telben" style="width: 100% !important;">(*)Telephone</label>
         </div>
 
